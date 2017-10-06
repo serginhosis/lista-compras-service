@@ -1,21 +1,22 @@
 package br.com.sis.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 @Entity
-public class Item {
+public class Item implements Serializable {
 	
+	private static final long serialVersionUID = 5964031555135352149L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	
-	@NotEmpty(message="O nome do item é obrigatório")
+		
 	private String nome;
 	
 	private boolean foiComprado;
@@ -47,6 +48,10 @@ public class Item {
 	}
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", nome=" + nome + ", foiComprado=" + foiComprado + ", version=" + version + "]";
 	}
 	
 	
