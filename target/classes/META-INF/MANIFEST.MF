@@ -3,7 +3,7 @@ Implementation-Title: Lista de compras
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: serginho
 Implementation-Vendor-Id: br.com.sis
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_151
 Implementation-URL: http://projects.spring.io/spring-boot/lista-compra
  s-service/
 Created-By: Maven Integration for Eclipse
