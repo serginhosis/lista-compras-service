@@ -1,4 +1,4 @@
-package br.com.sis.domain.configs;
+package br.com.sis.core.configs;
 
 import org.springframework.context.annotation.Configuration;
 
