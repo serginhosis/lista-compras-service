@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata: 
+   name: lista-compra-deployment
+spec:
+   template:
+      metadata:
+        labels:
+         name: lista-compra-pod
+      spec:
+        containers:
+           - name: container-lista-compras
+             image: sergiomn/lista-compras-service:latest
+             ports:
+               - containerPort: 9090

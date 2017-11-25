@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lista-compra-pod
+spec:
+  containers:
+    - name: container-lista-compras
+      image: sergiomn/lista-compras-service:latest
+      ports:
+       - containerPort: 9090

@@ -1,0 +1,25 @@
+version: '3'
+services: 
+   lista-compras-mysql: 
+      image: mysql
+      environment: 
+         - MYSQL_USER=root
+         - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+         - MYSQL_DATABASE=lista_compras_db
+      volumes: 
+         - /home/serginho/mysql-lista:/var/lib/mysql
+      ports:
+         - 3307:3306
+      networks: 
+         - lista-compras-rede
+   lista-compras-service:
+      image: sergiomn/lista-compras-service:latest
+      ports:
+         - 9090:9090
+      networks:
+         - lista-compras-rede
+      depends_on:
+         - lista-compras-mysql
+networks: 
+   lista-compras-rede:
+      driver: bridge
